@@ -1,0 +1,57 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "tayu:selection_wand",
+      "category": "equipment"
+    },
+    "components": {
+      "minecraft:hand_equipped": true,
+      "minecraft:durability": {
+        "max_durability": 100
+      },
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "set_pos1"
+        }
+      },
+      "minecraft:on_use_on": {
+        "on_use_on": {
+          "event": "set_pos2"
+        }
+      }
+    },
+    "events": {
+      "set_pos1": {
+        "sequence": [
+          {
+            "run_command": {
+              "command": [
+                "execute @s ~ ~ ~ scoreboard players set @s pos1_x ~",
+                "execute @s ~ ~ ~ scoreboard players set @s pos1_y ~",
+                "execute @s ~ ~ ~ scoreboard players set @s pos1_z ~",
+                "tellraw @s {\"rawtext\":[{\"text\":\"Position 1 set to (\"},{\"score\":{\"name\":\"@s\",\"objective\":\"pos1_x\"}},{\"text\":\", \"},{\"score\":{\"name\":\"@s\",\"objective\":\"pos1_y\"}},{\"text\":\", \"},{\"score\":{\"name\":\"@s\",\"objective\":\"pos1_z\"}},{\"text\":\")\"}]}"
+              ],
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "set_pos2": {
+        "sequence": [
+          {
+            "run_command": {
+              "command": [
+                "execute @s ~ ~ ~ scoreboard players set @s pos2_x ~",
+                "execute @s ~ ~ ~ scoreboard players set @s pos2_y ~",
+                "execute @s ~ ~ ~ scoreboard players set @s pos2_z ~",
+                "tellraw @s {\"rawtext\":[{\"text\":\"Position 2 set to (\"},{\"score\":{\"name\":\"@s\",\"objective\":\"pos2_x\"}},{\"text\":\", \"},{\"score\":{\"name\":\"@s\",\"objective\":\"pos2_y\"}},{\"text\":\", \"},{\"score\":{\"name\":\"@s\",\"objective\":\"pos2_z\"}},{\"text\":\")\"}]}"
+              ],
+              "target": "self"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
