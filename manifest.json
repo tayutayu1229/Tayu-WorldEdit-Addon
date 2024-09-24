@@ -1,0 +1,17 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Tayu WorldEdit Addon",
+    "description": "Adds WorldEdit-like functionality to Minecraft Bedrock",
+    "uuid": "b92a3c73-d36e-4e8a-8f5d-e2c1f5e4d7a8",
+    "version": [0, 1, 0],
+    "min_engine_version": [1, 16, 0]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "3f7f9eae-4f45-47b0-9320-a2e69a82a2e6",
+      "version": [0, 1, 0]
+    }
+  ]
+}
